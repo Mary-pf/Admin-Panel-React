@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import { useEffect } from "react";
 import Navbar from "./navber/Index";
 import Sidbar from "./sidebar/Index";
@@ -6,11 +5,9 @@ import { toggleSidebar } from "../../utils/initialDoms";
 import AdminContextContainer, {
   AdminContext,
 } from "../../context/adminLayoutContext";
-import Dashboard from "../../pages/dashboard/Dashboard";
-import Category from "../../pages/category/Category";
+import Content from "../../pages/Content.jsx";
 
 const Index = () => {
-  const { showSidebar } = useContext(AdminContext);
   useEffect(() => {
     // require("../../assets/JS/toggleSidebar");
     // toggleSidebar();
@@ -18,15 +15,9 @@ const Index = () => {
   return (
     <AdminContextContainer>
       <div>
+        <Content />
         <Navbar />
         <Sidbar />
-        <section
-          id="content_section"
-          className={`bg-light py-2 px-3 ${showSidebar ? "expanded" : null}`}
-        >
-          {/* <Dashboard /> */}
-          <Category />
-        </section>
       </div>
     </AdminContextContainer>
   );
