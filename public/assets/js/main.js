@@ -18,8 +18,8 @@
 //     });
 //   }
 
-//   // chart-------------->>
-//   // const DATA_COUNT = 13;
+// chart-------------->>
+// const DATA_COUNT = 13;
 
 //   const labels = [
 //     "فروردین",
@@ -89,7 +89,6 @@
 
 //   const ctx = document.getElementById("myChart").getContext("2d");
 //   new Chart(ctx, config);
-// });
 
 // var tooltipEl = document.querySelectorAll(".has_tooltip");
 // for (const item of tooltipEl) {
