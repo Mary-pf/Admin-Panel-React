@@ -21,6 +21,33 @@ const CategoryTable = () => {
       like_count: "2",
       status: "1",
     },
+    {
+      id: "3",
+      category: "aaa",
+      title: "bbb",
+      price: "1111",
+      stock: "5",
+      like_count: "2",
+      status: "1",
+    },
+    {
+      id: "4",
+      category: "ccc",
+      title: "ddd",
+      price: "2222",
+      stock: "7",
+      like_count: "2",
+      status: "1",
+    },
+    {
+      id: "5",
+      category: "ccc",
+      title: "ddd",
+      price: "2222",
+      stock: "7",
+      like_count: "2",
+      status: "1",
+    },
   ];
 
   const dataInfo = [
