@@ -13,33 +13,95 @@ const Index = () => {
       >
         <div className="p-0 m-0">
           <Avatar name="مریم پورفرزین" imagePath="/assets/images/user2.jpg" />
-          <SideBarItem icon="fas fa-tachometer-alt" title="داشبورد" />
+          <SideBarItem
+            targetPath="/"
+            icon="fas fa-tachometer-alt"
+            title="داشبورد"
+          />
           {/* <!-- =================================== --> */}
 
           <SidebarGroupTitle title="فروشگاه" />
-          <SideBarItem icon="fas fa-stream" title="مدیریت گروه محصول" />
-          <SideBarItem icon="fas fa-cube" title="مدیریت محصول" />
-          <SideBarItem icon="fas fa-copyright" title="مدیریت برند ها" />
-          <SideBarItem icon="fab fa-pagelines" title="مدیریت گارانتی ها" />
-          <SideBarItem icon="fas fa-palette" title="مدیریت رنگ ها" />
-          <SideBarItem icon="fas fa-percentage" title="مدیریت تخفیف ها" />
+          <SideBarItem
+            targetPath="/categories"
+            icon="fas fa-stream"
+            title="مدیریت گروه محصول"
+          />
+          <SideBarItem
+            targetPath="/products"
+            icon="fas fa-cube"
+            title="مدیریت محصول"
+          />
+          <SideBarItem
+            targetPath="/test"
+            icon="fas fa-copyright"
+            title="مدیریت برند ها"
+          />
+          <SideBarItem
+            targetPath="/test"
+            icon="fab fa-pagelines"
+            title="مدیریت گارانتی ها"
+          />
+          <SideBarItem
+            targetPath="/test"
+            icon="fas fa-palette"
+            title="مدیریت رنگ ها"
+          />
+          <SideBarItem
+            targetPath="/test"
+            icon="fas fa-percentage"
+            title="مدیریت تخفیف ها"
+          />
 
           {/* <!-- =================================== --> */}
           <SidebarGroupTitle title="سفارشات و سبد" />
-          <SideBarItem icon="fas fa-shopping-basket" title="مدیریت سبد ها" />
-          <SideBarItem icon="fas fa-luggage-cart" title="مدیریت سفارشات" />
-          <SideBarItem icon="fas fa-truck-loading" title="مدیریت نحوه ارسال" />
+          <SideBarItem
+            targetPath="/test"
+            icon="fas fa-shopping-basket"
+            title="مدیریت سبد ها"
+          />
+          <SideBarItem
+            targetPath="/test"
+            icon="fas fa-luggage-cart"
+            title="مدیریت سفارشات"
+          />
+          <SideBarItem
+            targetPath="/test"
+            icon="fas fa-truck-loading"
+            title="مدیریت نحوه ارسال"
+          />
 
           {/* <!-- =================================== --> */}
           <SidebarGroupTitle title="کاربران و همکاران" />
-          <SideBarItem icon="fas fa-users" title="مشاهده کاربران" />
-          <SideBarItem icon="fas fa-user-tag" title="نقش ها" />
-          <SideBarItem icon="fas fa-shield-alt" title="مجوزها" />
+          <SideBarItem
+            targetPath="/test"
+            icon="fas fa-users"
+            title="مشاهده کاربران"
+          />
+          <SideBarItem
+            targetPath="/test"
+            icon="fas fa-user-tag"
+            title="نقش ها"
+          />
+          <SideBarItem
+            targetPath="/test"
+            icon="fas fa-shield-alt"
+            title="مجوزها"
+          />
 
           {/* <!-- =================================== --> */}
           <SidebarGroupTitle title="ارتباطات" />
-          <SideBarItem icon="fas fa-question-circle" title="سوال ها" />
-          <SideBarItem icon="fas fa-comment" title="نظرات" />
+          <SideBarItem
+            targetPath="/test"
+            test
+            icon="fas fa-question-circle"
+            title="سوال ها"
+          />
+          <SideBarItem
+            targetPath="/test"
+            test
+            icon="fas fa-comment"
+            title="نظرات"
+          />
         </div>
       </div>
     </section>

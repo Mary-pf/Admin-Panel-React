@@ -109,7 +109,7 @@ const CategoryTable = () => {
         data={data}
         dataInfo={dataInfo}
         additionField={additionField}
-        numOfPage={2}
+        numOfPage={8}
         searchParams={searchParams}
       >
         <AddCategory />
