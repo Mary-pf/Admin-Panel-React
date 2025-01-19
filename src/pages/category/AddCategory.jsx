@@ -1,7 +1,7 @@
+import React from "react";
 import ModalsContainer from "../../components/ModalsContainer";
-import { createPortal } from "react-dom";
 
-const AddCategory = () => {
+const Addcategory = () => {
   return (
     <>
       <button
@@ -20,7 +20,7 @@ const AddCategory = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 col-lg-8">
-              <div className="input-group dir_ltr mb-3">
+              <div className="input-group mb-3 dir_ltr">
                 <select type="text" className="form-control">
                   <option value="1">بدون والد</option>
                   <option value="1">دسته شماره 1</option>
@@ -31,7 +31,7 @@ const AddCategory = () => {
               </div>
             </div>
             <div className="col-12 col-md-6 col-lg-8">
-              <div className="input-group dir_ltr mb-3">
+              <div className="input-group mb-3 dir_ltr">
                 <input
                   type="text"
                   className="form-control"
@@ -43,7 +43,7 @@ const AddCategory = () => {
               </div>
             </div>
             <div className="col-12 col-md-6 col-lg-8">
-              <div className="input-group dir_ltr mb-3">
+              <div className="input-group mb-3 dir_ltr">
                 <textarea
                   type="text"
                   className="form-control"
@@ -56,30 +56,35 @@ const AddCategory = () => {
               </div>
             </div>
             <div className="col-12 col-md-6 col-lg-8">
-              <div className="input-group dir_ltr mb-3" />
-              <input type="file" className="form-control" placeholder="تصویر" />
-              <span className="input-group-text w_6rem justify-content-center">
-                تصویر
-              </span>
+              <div className="input-group mb-3 dir_ltr">
+                <input
+                  type="file"
+                  className="form-control"
+                  placeholder="تصویر"
+                />
+                <span className="input-group-text w_6rem justify-content-center">
+                  تصویر
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="col-12 col-md-6 col-lg-8 row justify-content-center">
-            <div className="form-check form-switch col-5 col-md-2">
-              <input
-                className="form-check-input pointer"
-                type="checkbox"
-                id="flexSwitchCheckDefault"
-              />
-              <label
-                className="form-check-label pointer"
-                htmlFor="flexSwitchCheckDefault"
-              >
-                وضعیت فعال
-              </label>
+            <div className="col-12 col-md-6 col-lg-8 row justify-content-center">
+              <div className="form-check form-switch col-5 col-md-2">
+                <input
+                  className="form-check-input pointer"
+                  type="checkbox"
+                  id="flexSwitchCheckDefault"
+                />
+                <label
+                  className="form-check-label pointer"
+                  htmlFor="flexSwitchCheckDefault"
+                >
+                  وضعیت فعال
+                </label>
+              </div>
             </div>
-          </div>
-          <div className="btn_box text-center col-12 col-md-6 col-lg-8 mt-4">
-            <button className="btn btn-primary ">ذخیره</button>
+            <div className="btn_box text-center col-12 col-md-6 col-lg-8 mt-4">
+              <button className="btn btn-primary ">ذخیره</button>
+            </div>
           </div>
         </div>
       </ModalsContainer>
@@ -87,4 +92,4 @@ const AddCategory = () => {
   );
 };
 
-export default AddCategory;
+export default Addcategory;

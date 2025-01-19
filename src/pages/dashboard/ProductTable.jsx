@@ -1,3 +1,5 @@
+import React from "react";
+
 const ProductTable = () => {
   return (
     <table className="table table-responsive text-center table-hover table-bordered no_shadow_back_table font_08">
@@ -85,4 +87,5 @@ const ProductTable = () => {
     </table>
   );
 };
+
 export default ProductTable;

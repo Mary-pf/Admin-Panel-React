@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { setDashboardChart } from "../../utils/dashboardChart";
 import Card from "./Card";
 import ProductTable from "./ProductTable";
@@ -19,7 +19,6 @@ const Dashboard = () => {
       "بهمن",
       "اسفند",
     ];
-
     const datapoints = [0, 20, 20, 60, 60, 120, 180, 120, 125, 105, 110, 170];
     setDashboardChart(labels, datapoints);
   }, []);
@@ -29,11 +28,13 @@ const Dashboard = () => {
       <div className="row">
         <Card
           currentValue={7}
-          desc="سبدهای خرید مانده امروز"
-          icon="fas fa-shopping-basket"
+          title={"سبد خرید امروز"}
+          desc={"سبد های خرید مانده امروز"}
+          icon={"fas fa-shopping-basket"}
           lastWeekValue={13}
           lastMonthValue={18}
         />
+
         <Card
           currentValue={5}
           title={"سفارشات مانده امروز"}

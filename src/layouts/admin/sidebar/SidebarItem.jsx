@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const SideBarItem = ({ icon, title, targetPath }) => {
+const SidebarItem = ({ icon, title, targetPath }) => {
   return (
     <NavLink
       to={targetPath}
@@ -12,4 +12,4 @@ const SideBarItem = ({ icon, title, targetPath }) => {
   );
 };
 
-export default SideBarItem;
+export default SidebarItem;

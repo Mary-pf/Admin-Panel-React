@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AdminContext } from "../../../context/adminLayoutContext";
 import Avatar from "./Avatar";
 import SidebarGroupTitle from "./SidebarGroupTitle";
-import SideBarItem from "./SidebarItem";
+import SidebarItem from "./SidebarItem";
 
 const Index = () => {
   const { showSidebar } = useContext(AdminContext);
@@ -13,92 +13,86 @@ const Index = () => {
       >
         <div className="p-0 m-0">
           <Avatar name="مریم پورفرزین" imagePath="/assets/images/user2.jpg" />
-          <SideBarItem
+          <SidebarItem
             targetPath="/"
             icon="fas fa-tachometer-alt"
             title="داشبورد"
           />
           {/* <!-- =================================== --> */}
-
           <SidebarGroupTitle title="فروشگاه" />
-          <SideBarItem
+          <SidebarItem
             targetPath="/categories"
             icon="fas fa-stream"
             title="مدیریت گروه محصول"
           />
-          <SideBarItem
+          <SidebarItem
             targetPath="/products"
             icon="fas fa-cube"
             title="مدیریت محصول"
           />
-          <SideBarItem
-            targetPath="/test"
+          <SidebarItem
+            targetPath="/brands"
             icon="fas fa-copyright"
-            title="مدیریت برند ها"
+            title="مدیریت برندها"
           />
-          <SideBarItem
-            targetPath="/test"
+          <SidebarItem
+            targetPath="/guaranties"
             icon="fab fa-pagelines"
             title="مدیریت گارانتی ها"
           />
-          <SideBarItem
-            targetPath="/test"
+          <SidebarItem
+            targetPath="/colors"
             icon="fas fa-palette"
             title="مدیریت رنگ ها"
           />
-          <SideBarItem
-            targetPath="/test"
+          <SidebarItem
+            targetPath="/discounts"
             icon="fas fa-percentage"
             title="مدیریت تخفیف ها"
           />
-
           {/* <!-- =================================== --> */}
           <SidebarGroupTitle title="سفارشات و سبد" />
-          <SideBarItem
-            targetPath="/test"
+          <SidebarItem
+            targetPath="/carts"
             icon="fas fa-shopping-basket"
             title="مدیریت سبد ها"
           />
-          <SideBarItem
-            targetPath="/test"
+          <SidebarItem
+            targetPath="/orders"
             icon="fas fa-luggage-cart"
             title="مدیریت سفارشات"
           />
-          <SideBarItem
-            targetPath="/test"
+          <SidebarItem
+            targetPath="/deliveries"
             icon="fas fa-truck-loading"
             title="مدیریت نحوه ارسال"
           />
-
           {/* <!-- =================================== --> */}
           <SidebarGroupTitle title="کاربران و همکاران" />
-          <SideBarItem
-            targetPath="/test"
+          <SidebarItem
+            targetPath="/users"
             icon="fas fa-users"
             title="مشاهده کاربران"
           />
-          <SideBarItem
-            targetPath="/test"
+          <SidebarItem
+            targetPath="/roles"
             icon="fas fa-user-tag"
             title="نقش ها"
           />
-          <SideBarItem
-            targetPath="/test"
+          <SidebarItem
+            targetPath="/permissions"
             icon="fas fa-shield-alt"
-            title="مجوزها"
+            title="مجوز ها"
           />
-
           {/* <!-- =================================== --> */}
           <SidebarGroupTitle title="ارتباطات" />
-          <SideBarItem
-            targetPath="/test"
-            test
+          <SidebarItem
+            targetPath="/questions"
             icon="fas fa-question-circle"
             title="سوال ها"
           />
-          <SideBarItem
-            targetPath="/test"
-            test
+          <SidebarItem
+            targetPath="/comments"
             icon="fas fa-comment"
             title="نظرات"
           />
