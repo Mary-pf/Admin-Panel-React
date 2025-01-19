@@ -29,8 +29,8 @@ const Product = () => {
           </button>
         </div>
       </div>
-      <TableProduct />
       <AddProduct />
+      <TableProduct />
     </div>
   );
 };
