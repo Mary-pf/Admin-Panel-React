@@ -1,5 +1,6 @@
 import { elements } from "chart.js";
 import PaginatedTable from "../../components/PaginatedTable";
+import AddCategory from "./AddCategory";
 
 const CategoryTable = () => {
   const data = [
@@ -96,13 +97,23 @@ const CategoryTable = () => {
     elements: (itemId) => additionElements(itemId),
   };
 
+  const searchParams = {
+    title: "جستجو",
+    placeholder: "قسمتی از عنوان را وارد کنید",
+    searchField: "title",
+  };
+
   return (
     <>
       <PaginatedTable
         data={data}
         dataInfo={dataInfo}
         additionField={additionField}
-      />
+        numOfPage={2}
+        searchParams={searchParams}
+      >
+        <AddCategory />
+      </PaginatedTable>
     </>
     // <>
     //   <table className="table table-responsive text-center table-hover table-bordered">
