@@ -1,24 +1,32 @@
-import { useEffect } from "react";
-import Navbar from "./navber/Index";
-import Sidbar from "./sidebar/Index";
-import { toggleSidebar } from "../../utils/initialDoms";
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 import AdminContextContainer, {
   AdminContext,
 } from "../../context/adminLayoutContext";
-import Content from "../../pages/Content.jsx";
+import { useIsLogin } from "../../hook/authHook.js";
+import Category from "../../pages/category/Category";
+import Content from "../../pages/Content";
+import Dashboard from "../../pages/dashboard/Dashboard";
+import { toggleSidebar } from "../../utils/initialDoms";
+import Navbar from "./navber/Index.jsx";
+import Sidebar from "./sidebar/Index.jsx";
 
 const Index = () => {
-  useEffect(() => {
-    // require("../../assets/JS/toggleSidebar");
-    // toggleSidebar();
-  }, []);
+  const [loading, isLogin] = useIsLogin();
   return (
     <AdminContextContainer>
-      <div>
-        <Content />
-        <Navbar />
-        <Sidbar />
-      </div>
+      {loading ? (
+        <h1 className="text-center waiting_center">لطفا صبر کنید...</h1>
+      ) : isLogin ? (
+        <div>
+          <Content />
+          <Navbar />
+          <Sidebar />
+        </div>
+      ) : (
+        <Navigate to={"/auth/login"} />
+      )}
     </AdminContextContainer>
   );
 };

@@ -1,11 +1,15 @@
-import Index from "./layouts/admin/main.jsx";
+import React from "react";
+import { useLocation } from "react-router-dom";
+import AdminLayout from "./layouts/admin/main.jsx";
+import AuthLayout from "./layouts/authLayout/AuthLayout.jsx";
 
-const App = () => {
+function App() {
+  const location = useLocation();
   return (
     <div className="App">
-      <Index />
+      {location.pathname.includes("/auth") ? <AuthLayout /> : <AdminLayout />}
     </div>
   );
-};
+}
 
 export default App;

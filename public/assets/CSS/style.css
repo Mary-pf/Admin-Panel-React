@@ -18,9 +18,34 @@ body {
   text-align: right;
   /* box-sizing: content-box */
 }
-
 a {
   text-decoration: none !important;
+}
+
+.waiting_center {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: opacityChange;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+@keyframes opacityChange {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .modal-backdrop.fade {
@@ -32,8 +57,8 @@ a {
 }
 
 .disabled {
-  pointer-events: none !important; /*موس روش کار نکنه */
-  opacity: 0.6;
+  pointer-events: none !important;
+  opacity: 0.5;
 }
 
 /* scrollbars ------------------ */
@@ -62,6 +87,10 @@ a {
 }
 .hoverable_text:hover {
   text-shadow: 0 0 3px black;
+}
+
+.error_message {
+  margin-top: -8px;
 }
 
 .hoverable {
@@ -206,7 +235,6 @@ th {
   top: 64px;
   height: calc(100vh - 64px);
   padding: 0;
-  /* z-index: 1000;  */
 }
 #sidebar_section .mini_sidebar {
   width: 70px;
@@ -242,27 +270,27 @@ th {
   transform: scale(1);
 }
 
-#sidebar_section .mini_sidebar .sidebar-items {
+#sidebar_section .mini_sidebar .siebar_items {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 
-#sidebar_section .mini_sidebar .sidebar-items:not(:first-child):hover {
+#sidebar_section .mini_sidebar .siebar_items:not(:first-child):hover {
   background-color: rgb(85, 84, 84);
 }
 
-#sidebar_section .mini_sidebar .sidebar-items:not(:first-child) {
+#sidebar_section .mini_sidebar .siebar_items:not(:first-child) {
   justify-content: right;
 }
 
-#sidebar_section .mini_sidebar .sidebar-items .sidebar_avatar_name {
+#sidebar_section .mini_sidebar .siebar_items .sidebar_avatar_name {
   position: absolute;
   bottom: 0;
 }
 
-#sidebar_section .mini_sidebar .sidebar-items.avatar_li {
+#sidebar_section .mini_sidebar .siebar_items.avatar_li {
   height: 110px !important;
   overflow: hidden;
 }
@@ -414,6 +442,14 @@ th {
     hsla(186, 100%, 69%, 1) 100%
   );
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0061FF", endColorstr="#60EFFF", GradientType=1 );
+}
+
+.danger_shadow {
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.is_inline .input-group {
+  margin: 0 !important;
 }
 
 /* content end-------<<<<<<< */

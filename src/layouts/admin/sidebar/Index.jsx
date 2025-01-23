@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { AdminContext } from "../../../context/adminLayoutContext";
 import Avatar from "./Avatar";
 import SidebarGroupTitle from "./SidebarGroupTitle";
@@ -9,10 +9,13 @@ const Index = () => {
   return (
     <section id="sidebar_section">
       <div
-        className={`mini_sidebar collapsedd bg-dark h-100" ${showSidebar ? "expanded" : null}`}
+        className={`mini_sidebar collapsedd bg-dark h-100 ${showSidebar ? "expanded" : null}`}
       >
         <div className="p-0 m-0">
-          <Avatar name="مریم پورفرزین" imagePath="/assets/images/user2.jpg" />
+          <Avatar
+            name="قاسم بساکی"
+            imagePath="/assets/images/avatar/user2.jpg"
+          />
           <SidebarItem
             targetPath="/"
             icon="fas fa-tachometer-alt"

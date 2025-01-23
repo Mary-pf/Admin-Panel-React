@@ -506,20 +506,14 @@
                 </li>
             </ul>
             </nav>
-    </div>
-
-    <!-- #endregion content -->
-
     
-    </section>
 
 
 
 
 
-    <!-- #region(collapsed) add product category modal  -->
-   
-    <!--  #endregion  -->
+
+  
     
     <!-- #region(collapsed) add product category attribute modal  -->
     <div class="modal fade" id="add_product_category_attr_modal" tabindex="-1" aria-hidden="true">
