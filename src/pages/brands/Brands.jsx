@@ -1,32 +1,70 @@
 import React from "react";
-import AddBrands from "./AddBrands";
-import Brandstable from "./BrandsTable";
+import ModalsContainer from "../../components/ModalsContainer";
+import { Formik, Form } from "formik";
+import { initialValues, onSubmit, validationSchema } from "./core";
+import FormikControl from "../../components/form/FormikControl";
+import SubmitButton from "../../components/form/SubmitButton";
 
-const Brands = () => {
+const AddBrands = ({ setData }) => {
   return (
-    <div
-      id="manage_brand_section"
-      className="manage_brand_section main_section"
-    >
-      <h4 className="text-center my-3">مدیریت برند ها</h4>
-      <div className="row justify-content-between">
-        <div className="col-10 col-md-6 col-lg-4">
-          <div className="input-group mb-3 dir_ltr">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="قسمتی از عنوان را وارد کنید"
-            />
-            <span className="input-group-text">جستجو</span>
+    <>
+      <button
+        className="btn btn-success d-flex justify-content-center align-items-center"
+        data-bs-toggle="modal"
+        data-bs-target="#add_brand_modal"
+      >
+        <i className="fas fa-plus text-light"></i>
+      </button>
+      <ModalsContainer
+        id={"add_brand_modal"}
+        title={"افزودن برند"}
+        fullScreen={false}
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <Formik
+              initialValues={initialValues}
+              onSubmit={(values, actions) => onSubmit(values, actions, setData)}
+              validationSchema={validationSchema}
+            >
+              <Form>
+                <FormikControl
+                  control="input"
+                  type="text"
+                  name="original_name"
+                  label="عنوان لاتین"
+                  placeholder="کیبرد را در حالت لاتین قرار دهید"
+                />
+                <FormikControl
+                  control="input"
+                  type="text"
+                  name="persian_name"
+                  label="عنوان فارسی"
+                  placeholder="کیبرد را در حالت فارسی قرار دهید"
+                />
+                <FormikControl
+                  control="textarea"
+                  name="descriptions"
+                  label="توضیحات"
+                  placeholder="توضیحات"
+                />
+                <FormikControl
+                  control="file"
+                  name="logo"
+                  label="تصویر"
+                  placeholder="تصویر"
+                />
+
+                <div className="btn_box text-center col-12">
+                  <SubmitButton />
+                </div>
+              </Form>
+            </Formik>
           </div>
         </div>
-        <div className="col-2 col-md-6 col-lg-4 d-flex flex-column align-items-end">
-          <AddBrands />
-        </div>
-      </div>
-      <Brandstable />
-    </div>
+      </ModalsContainer>
+    </>
   );
 };
 
-export default Brands;
+export default AddBrands;
