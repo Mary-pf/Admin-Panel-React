@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import PaginatedDataTable from "../../components/PaginatedTable.jsx";
-import { getProductsService } from "../../services/products.js";
+import {
+  deleteProductService,
+  getProductsService,
+} from "../../services/products.js";
+import { Alert, Confirm } from "../../utils/alerts.js";
 import AddProduct from "./AddProduct";
 import Actions from "./tableAddition/Actions";
 
@@ -26,7 +30,9 @@ const TableProduct = () => {
     {
       field: null,
       title: "عملیات",
-      elements: (rowData) => <Actions rowData={rowData} />,
+      elements: (rowData) => (
+        <Actions rowData={rowData} handleDeleteProduct={handleDeleteProduct} />
+      ),
     },
   ];
 
@@ -48,6 +54,18 @@ const TableProduct = () => {
   const handleSearch = (char) => {
     setSearchChar(char);
     handleGetProducts(1, countOnPage, char);
+  };
+
+  const handleDeleteProduct = async (product) => {
+    if (
+      await Confirm("حذف محصول", `آیا از حذف ${product.title} اطمینان دارید؟`)
+    ) {
+      const res = await deleteProductService(product.id);
+      if (res.status === 200) {
+        Alert("انجام شد", res.data.message, "success");
+        handleGetProducts(currentPage, countOnPage, searchChar);
+      }
+    }
   };
 
   useEffect(() => {
