@@ -16,18 +16,24 @@ const initialValues = {
 const onSubmit = async (values, submitMethods, navigate) => {
   try {
     const res = await loginService(values);
+    console.log("API Response:", res);
     if (res.status == 200) {
       localStorage.setItem("loginToken", JSON.stringify(res.data));
+      console.log("Token stored:", localStorage.getItem("loginToken"));
       navigate("/");
     } else {
+      console.log("Error Message:", res.data.message);
+
       Alert("متاسفم...!", res.data.message, "error");
     }
     submitMethods.setSubmitting(false);
   } catch (error) {
     submitMethods.setSubmitting(false);
     Alert("متاسفم...!", "متاسفانه مشکلی از سمت سرور رخ داده", "error");
+    console.error("API Error:", error);
   }
 };
+
 const validationSchema = Yup.object({
   phone: Yup.number().required("لطفا این قسمت را پر کنید"),
   password: Yup.string()

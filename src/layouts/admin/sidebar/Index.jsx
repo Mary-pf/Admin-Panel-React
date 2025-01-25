@@ -13,7 +13,7 @@ const Index = () => {
       >
         <div className="p-0 m-0">
           <Avatar
-            name="قاسم بساکی"
+            name="مریم پورفرزین"
             imagePath="/assets/images/avatar/user2.jpg"
           />
           <SidebarItem

@@ -6,7 +6,7 @@ import {
   getCategoriesService,
 } from "../../services/category";
 import { Alert, Confirm } from "../../utils/alerts";
-import { convertDataToJalali } from "../../utils/convertDate";
+import { convertDateToJalali } from "../../utils/convertDate";
 import Addcategory from "./AddCategory";
 import Actions from "./tableAdditions/Action";
 import ShowInMenu from "./tableAdditions/ShowInMenu";
