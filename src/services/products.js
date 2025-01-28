@@ -1,3 +1,4 @@
+import { convertDataToFormdata } from "../utils/convertDate.js";
 import httpService from "./httpService.js";
 
 export const getProductsService = (page, countOnPage, searchChar) => {
@@ -7,6 +8,18 @@ export const getProductsService = (page, countOnPage, searchChar) => {
   );
 };
 
+export const createNewProductService = (data) => {
+  return httpService(
+    "/admin/products",
+    "post",
+    data.image ? convertDataToFormdata(data) : data,
+  );
+};
+
+export const editProductService = (productId, data) => {
+  return httpService(`/admin/products/${productId}`, "put", data);
+};
+
 export const deleteProductService = (productId) => {
-  return httpService(`/admin/product/${productId}`, "delete");
+  return httpService(`/admin/products/${productId}`, "delete");
 };

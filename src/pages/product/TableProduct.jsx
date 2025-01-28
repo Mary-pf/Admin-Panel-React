@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import AddButtonLink from "../../components/AddButtonLink";
 import PaginatedDataTable from "../../components/PaginatedTable.jsx";
 import {
   deleteProductService,
@@ -83,7 +84,7 @@ const TableProduct = () => {
       pageCount={pageCount}
       handleSearch={handleSearch}
     >
-      <AddProduct />
+      <AddButtonLink href={"/products/add-product"} />
     </PaginatedDataTable>
   );
 };

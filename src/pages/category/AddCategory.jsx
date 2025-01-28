@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ModalsContainer from "../../components/ModalsContainer";
 import { Form, Formik } from "formik";
 import FormikControl from "../../components/form/FormikControl";
@@ -113,6 +113,7 @@ const Addcategory = ({ setForceRender }) => {
                     options={parents}
                     name="parent_id"
                     label="دسته والد"
+                    firstItem="دسته بندی والد را انتخاب کنید..."
                   />
                 ) : null}
                 <FormikControl
