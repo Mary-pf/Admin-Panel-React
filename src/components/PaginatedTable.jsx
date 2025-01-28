@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SpinnerLoad from "./SpinnerLoad";
+
 const PaginatedTable = ({
   children,
   data,
   dataInfo,
-  additionField,
   numOfPAge,
   searchParams,
   loading,
@@ -56,31 +56,27 @@ const PaginatedTable = ({
       </div>
       {loading ? (
         <SpinnerLoad colorClass={"text-primary"} />
-      ) : data?.length ? (
+      ) : data.length ? (
         <table className="table table-responsive text-center table-hover table-bordered">
           <thead className="table-secondary">
             <tr>
-              {dataInfo.map((i) => (
-                <th key={i.field}>{i.title}</th>
+              {dataInfo.map((i, index) => (
+                <th key={i.field || `notField__${index}`}>{i.title}</th>
               ))}
-              {additionField
-                ? additionField.map((a, index) => (
-                    <th key={a.id + "__" + index}>{a.title}</th>
-                  ))
-                : null}
             </tr>
           </thead>
           <tbody>
             {tableData.map((d) => (
               <tr key={d.id}>
-                {dataInfo.map((i) => (
-                  <td key={i.field + "_" + d.id}>{d[i.field]}</td>
-                ))}
-                {additionField
-                  ? additionField.map((a, index) => (
-                      <td key={a.id + "___" + index}>{a.elements(d)}</td>
-                    ))
-                  : null}
+                {dataInfo.map((i, index) =>
+                  i.field ? (
+                    <td key={i.field + "_" + d.id}>{d[i.field]}</td>
+                  ) : (
+                    <td key={d.id + "__" + i.id + "__" + index}>
+                      {i.elements(d)}
+                    </td>
+                  ),
+                )}
               </tr>
             ))}
           </tbody>
@@ -105,44 +101,18 @@ const PaginatedTable = ({
                 <span aria-hidden="true">&raquo;</span>
               </span>
             </li>
-            {currentPage > pageRange ? (
-              <li className="page-item me-2">
+            {pages.map((page) => (
+              <li className="page-item" key={page}>
                 <span
-                  className="page-link pointer"
-                  onClick={() => setCurrentPage(1)}
+                  className={`page-link pointer ${
+                    currentPage == page ? "alert-success" : ""
+                  }`}
+                  onClick={() => setCurrentPage(page)}
                 >
-                  1
+                  {page}
                 </span>
               </li>
-            ) : null}
-
-            {pages.map((page) => {
-              return page < currentPage + pageRange &&
-                page > currentPage - pageRange ? (
-                <li className="page-item" key={page}>
-                  <span
-                    className={`page-link pointer ${
-                      currentPage == page ? "alert-success" : ""
-                    }`}
-                    onClick={() => setCurrentPage(page)}
-                  >
-                    {page}
-                  </span>
-                </li>
-              ) : null;
-            })}
-
-            {currentPage <= pageCount - pageRange ? (
-              <li className="page-item ms-2">
-                <span
-                  className="page-link pointer"
-                  onClick={() => setCurrentPage(pageCount)}
-                >
-                  {pageCount}
-                </span>
-              </li>
-            ) : null}
-
+            ))}
             <li className="page-item">
               <span
                 className={`page-link pointer ${

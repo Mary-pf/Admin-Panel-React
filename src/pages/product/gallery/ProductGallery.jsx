@@ -16,22 +16,20 @@ const ProductGallery = () => {
 
   const handleSelectImage = async (e) => {
     setError(null);
-    setLoading(true);
     const image = e.target.files[0];
     const formdata = new FormData();
     formdata.append("image", image);
-    console.log(image);
     if (
       image.type != "image/png" &&
       image.type != "image/jpeg" &&
       image.type != "image/jpg"
     )
-      return setError("لطفا فقط از فایل با فرمت jpg  و یا png  استفاده کنید");
+      return setError("لطفا فقط از فایل با فرمت jpg و یا png استفاده کنید");
     if (image.size > 512000)
       return setError("حجم تصویر نباید بیشتر از 500 کیلوبایت باشد");
 
-    const res = await addProductImage(selectedProduct.id, formdata);
-    console.log(res);
+    setLoading(true);
+    const res = await addProductImageService(selectedProduct.id, formdata);
     setLoading(false);
     if (res.status === 201) {
       Alert("انجام شد", res.data.message, "success");
@@ -39,6 +37,35 @@ const ProductGallery = () => {
         ...old,
         { id: res.data.data.id, is_main: 0, image: res.data.data.image },
       ]);
+    }
+  };
+
+  const handleDeleteImage = async (imageId) => {
+    if (await Confirm("آیا از حذف این تصویر اطمینان دارید")) {
+      setLoading(true);
+      const res = await deleteProductImageService(imageId);
+      setLoading(false);
+      if (res.status === 200) {
+        Alert("انجام شد", res.data.message, "success");
+        setGallery((old) => old.filter((image) => image.id != imageId));
+      }
+    }
+  };
+
+  const handleSetMainImage = async (imageId) => {
+    setLoading(true);
+    const res = await setMainProductImageService(imageId);
+    setLoading(false);
+    if (res.status === 200) {
+      Alert("انجام شد", res.data.message, "success");
+      setGallery((old) => {
+        let newGallery = old.map((img) => {
+          return { ...img, is_main: 0 };
+        });
+        const index = newGallery.findIndex((i) => i.id == imageId);
+        newGallery[index].is_main = 1;
+        return newGallery;
+      });
     }
   };
 
@@ -54,6 +81,10 @@ const ProductGallery = () => {
       </div>
 
       <div className="row justify-content-center">
+        <small className="text-secondary pb-3">
+          نکته: لطفا از تصاویر مربع(600×600) استفاده کنید با حد اکثر حجم 500
+          کیلوبایت
+        </small>
         {error ? (
           <small className="d-d-block text-right text-danger py-3">
             {error}
@@ -76,6 +107,7 @@ const ProductGallery = () => {
                       <i
                         className="fas fa-clipboard-check text-success pointer hoverable_text mx-2 font_1_2"
                         title="انتخاب به عنوان اصلی"
+                        onClick={() => handleSetMainImage(g.id)}
                       >
                         {" "}
                       </i>
@@ -83,7 +115,10 @@ const ProductGallery = () => {
                     <i
                       className="fas fa-trash-alt text-danger pointer hoverable_text mx-2 font_1_2"
                       title="حذف این تصویر"
-                    ></i>
+                      onClick={() => handleDeleteImage(g.id)}
+                    >
+                      {" "}
+                    </i>
                   </div>
                 </div>
               ))
@@ -103,6 +138,7 @@ const ProductGallery = () => {
               name="image"
               className="w-100 h-100 opacity_0 pos-absolute pointer"
               onChange={handleSelectImage}
+              multiple={true}
             />
           </div>
         </div>
@@ -110,5 +146,4 @@ const ProductGallery = () => {
     </div>
   );
 };
-
 export default ProductGallery;

@@ -7,6 +7,7 @@ import Select from "./Select";
 import Switch from "./Switch";
 import Textarea from "./TextArea";
 import Ckeditor from "./Ckeditor";
+import Date from "./Date";
 
 const FormikControl = (props) => {
   switch (props.control) {
@@ -26,6 +27,8 @@ const FormikControl = (props) => {
       return <Switch {...props} />;
     case "ckeditor":
       return <Ckeditor {...props} />;
+    case "date":
+      return <Date {...props} />;
     default:
       return null;
   }

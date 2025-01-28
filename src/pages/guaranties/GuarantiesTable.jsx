@@ -19,9 +19,6 @@ const GuarantiesTable = () => {
     { field: "descriptions", title: "توضیحات" },
     { field: "length", title: "مدت گارانتی" },
     { field: "length_unit", title: "واحد" },
-  ];
-
-  const additionField = [
     {
       title: "عملیات",
       elements: (rowData) => (
@@ -68,7 +65,6 @@ const GuarantiesTable = () => {
     <PaginatedTable
       data={data}
       dataInfo={dataInfo}
-      additionField={additionField}
       numOfPAge={8}
       searchParams={searchParams}
       loading={loading}

@@ -17,9 +17,6 @@ const Brandstable = () => {
     { field: "original_name", title: "عنوان لاتین" },
     { field: "persian_name", title: "عنوان فارسی" },
     { field: "descriptions", title: "توضیحات" },
-  ];
-
-  const additionField = [
     {
       title: "لوگو",
       elements: (rowData) =>
@@ -78,7 +75,6 @@ const Brandstable = () => {
       <PaginatedTable
         data={data}
         dataInfo={dataInfo}
-        additionField={additionField}
         numOfPAge={8}
         searchParams={searchParams}
         loading={loading}

@@ -8,7 +8,7 @@ import { useIsLogin } from "../../hook/authHook.js";
 import Category from "../../pages/category/Category";
 import Content from "../../pages/Content";
 import Dashboard from "../../pages/dashboard/Dashboard";
-import { toggleSidebar } from "../../utils/initialDoms";
+import { toggleSidebar } from "../../utils/initialDoms.js";
 import Navbar from "./navber/Index.jsx";
 import Sidebar from "./sidebar/Index.jsx";
 

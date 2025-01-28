@@ -17,9 +17,6 @@ const ColorsTable = () => {
     { field: "id", title: "#" },
     { field: "title", title: "عنوان" },
     { field: "code", title: "کد رنگ" },
-  ];
-
-  const additionField = [
     {
       title: "رنگ",
       elements: (rowData) => (
@@ -75,7 +72,6 @@ const ColorsTable = () => {
     <PaginatedTable
       data={data}
       dataInfo={dataInfo}
-      additionField={additionField}
       numOfPAge={8}
       searchParams={searchParams}
       loading={loading}

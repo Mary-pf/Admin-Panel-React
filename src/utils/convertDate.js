@@ -11,3 +11,7 @@ export const convertDataToFormdata = (dataObj) => {
   }
   return formdata;
 };
+
+export const convertFormDateToMiladi = (date) => {
+  return jMoment(date, "jD / jM / jYYYY").format("YYYY-M-D");
+};
