@@ -39,6 +39,7 @@ const Content = () => {
         />
         <Route path="/products" element={<Product />} />
         <Route path="/products/add-product" element={<AddProduct />} />
+        <Route path="/products/set-attr" element={<SetAttrivute />} />
         <Route path="/colors" element={<Colors />} />
         <Route path="/guaranties" element={<Guaranties />} />
         <Route path="/brands" element={<Brands />} />

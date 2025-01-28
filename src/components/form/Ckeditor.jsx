@@ -6,26 +6,38 @@ const Ckeditor = ({ name, label, className, placeholder }) => {
   return (
     <Field>
       {({ form }) => {
+        console.log(form.values.descriptions);
+
         return (
-          <div className={`col-12 ${className}`}>
+          <div className={`col-12 ${className} mb-3`}>
             <CKEditor
               editor={ClassicEditor}
-              data={`<p>${label} : ${placeholder}</p>`}
+              data={form.values[name] || `<p>${label} : ${placeholder}</p>`}
+              config={{
+                ckfinder: {
+                  uploadUrl: "http://127.0.0.1:8000/api/upload",
+                },
+              }}
               onReady={(editor) => {
                 console.log(editor);
               }}
               onChange={(event, editor) => {
                 const data = editor.getData();
-                console.log({ event, editor, data });
+                form.setFieldValue(name, data);
               }}
               onBlur={(event, editor) => {
-                console.log("Blur.", editor);
+                form.setFieldTouched(name);
               }}
               onFocus={(event, editor) => {
-                console.log("Focus.", editor);
+                editor.getData() == `<p>${label} : ${placeholder}</p>`
+                  ? editor.setData("")
+                  : null;
+                // console.log("Focus.", editor);
               }}
             />
-            <ErrorMessage name={name} component={FormikError} />
+            <div className="mt-2">
+              <ErrorMessage name={name} component={FormikError} />
+            </div>
           </div>
         );
       }}
