@@ -1,7 +1,8 @@
 import { FastField, ErrorMessage } from "formik";
 import jMoment from "jalali-moment";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import FormikError from "./FormikError";
+
 const days = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
   23, 24, 25, 26, 27, 28, 29, 30, 31,
@@ -21,7 +22,7 @@ const months = [
   { id: 12, value: "اسفند" },
 ];
 
-const Date = ({ formik, name, label, yearsLimit }) => {
+const Date = ({ formik, name, label, yearsLimit, initialDate }) => {
   const [day, setDay] = useState();
   const [month, setMonth] = useState();
   const [year, setYear] = useState();
@@ -29,7 +30,7 @@ const Date = ({ formik, name, label, yearsLimit }) => {
   const [showConfig, setShowConfig] = useState(false);
 
   useEffect(() => {
-    let now = jMoment();
+    let now = jMoment(initialDate);
     setDay(now.jDate());
     setMonth(now.jMonth() + 1);
     setYear(now.jYear());

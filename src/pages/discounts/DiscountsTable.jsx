@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import AddButtonLink from "../../components/AddButtonLink";
 import PaginatedTable from "../../components/PaginatedTable";
-import { getAllDiscountsService } from "../../services/discounts.js";
+import {
+  deleteDiscountService,
+  getAllDiscountsService,
+} from "../../services/discounts.js";
 import { convertDateToJalali } from "../../utils/convertDate.js";
 import Actions from "./tableAddition/Actions";
+import { Alert, Confirm } from "../../utils/alerts.js";
 
 const DiscounTstable = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [codeToEdit, setCodeToEdit] = useState(null);
 
   const dataInfo = [
     { field: "id", title: "#" },
@@ -34,7 +37,12 @@ const DiscounTstable = () => {
     {
       field: null,
       title: "عملیات",
-      elements: (rowData) => <Actions rowData={rowData} />,
+      elements: (rowData) => (
+        <Actions
+          rowData={rowData}
+          handleDeleteDiscount={handleDeleteDiscount}
+        />
+      ),
     },
   ];
 
@@ -50,6 +58,18 @@ const DiscounTstable = () => {
     setLoading(false);
     if (res.status === 200) {
       setData(res.data.data);
+    }
+  };
+
+  const handleDeleteDiscount = async (discount) => {
+    if (
+      await Confirm(discount.title, "آیا از حذف این کد تخفیف اطمینان دارید؟")
+    ) {
+      const res = await deleteDiscountService(discount.id);
+      if (res.status === 200) {
+        Alert("حذف شد...!", res.data.message, "success");
+        setData((old) => old.filter((d) => d.id != discount.id));
+      }
     }
   };
 
@@ -69,5 +89,4 @@ const DiscounTstable = () => {
     </PaginatedTable>
   );
 };
-
 export default DiscounTstable;
