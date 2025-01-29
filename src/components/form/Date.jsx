@@ -22,7 +22,7 @@ const months = [
   { id: 12, value: "اسفند" },
 ];
 
-const Date = ({ formik, name, label, yearsLimit, initialDate }) => {
+const Date = ({ formik, name, label, yearsLimit, initialDate, className }) => {
   const [day, setDay] = useState();
   const [month, setMonth] = useState();
   const [year, setYear] = useState();
@@ -59,7 +59,7 @@ const Date = ({ formik, name, label, yearsLimit, initialDate }) => {
   };
 
   return (
-    <div className={`wrap-input100 validate-input form_date_picker`}>
+    <div className={`validate-input form_date_picker ${className}`}>
       <div
         className="input-group mb-3 dir_ltr pointer"
         onClick={handleShowDateConfig}
@@ -130,5 +130,4 @@ const Date = ({ formik, name, label, yearsLimit, initialDate }) => {
     </div>
   );
 };
-
 export default Date;

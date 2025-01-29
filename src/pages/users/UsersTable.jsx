@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import AddButtonLink from "../../components/AddButtonLink";
 import PaginatedDataTable from "../../components/PaginatedDataTable";
 import {
@@ -9,6 +8,7 @@ import {
 } from "../../services/users";
 import { Alert, Confirm } from "../../utils/alerts";
 import Actions from "./tableAddition/Actions";
+import Roles from "./tableAddition/Roles";
 
 const UsersTable = () => {
   const [data, setData] = useState([]);
@@ -26,6 +26,11 @@ const UsersTable = () => {
       title: "نام",
       elements: (rowData) =>
         `${rowData.first_name || ""} ${rowData.last_name || ""}`,
+    },
+    {
+      field: null,
+      title: "نقش",
+      elements: (rowData) => <Roles rowData={rowData} />,
     },
     { field: "phone", title: "شماره تلفن" },
     { field: "email", title: "ایمیل" },
@@ -50,7 +55,6 @@ const UsersTable = () => {
   const handleGetUsers = async (page, count, char) => {
     setLoading(true);
     const res = await getAllPaginatedUsersService(page, count, char);
-    console.log(res);
     res && setLoading(false);
     if (res.status === 200) {
       setData(res.data.data.data);
@@ -88,7 +92,8 @@ const UsersTable = () => {
       pageCount={pageCount}
       handleSearch={handleSearch}
     >
-      <AddButtonLink href={"/products/add-user"} />
+      <AddButtonLink href={"/users/add-user"} />
+      <Outlet context={{ setData }} />
     </PaginatedDataTable>
   );
 };
