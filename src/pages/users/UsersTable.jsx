@@ -68,13 +68,15 @@ const UsersTable = () => {
   };
 
   const handleDeleteUser = async (product) => {
-    // if (await Confirm("حذف کاربر",`آیا از حذف ${product.title} اطمینان دارید؟`)) {
-    //   const res = await deleteProductService(product.id);
-    //   if (res.status === 200) {
-    //     Alert("انجام شد", res.data.message, "success");
-    //     handleGetProducts(currentPage, countOnPage, searchChar)
-    //   }
-    // }
+    if (
+      await Confirm("حذف کاربر", `آیا از حذف ${product.title} اطمینان دارید؟`)
+    ) {
+      const res = await deleteProductService(product.id);
+      if (res.status === 200) {
+        Alert("انجام شد", res.data.message, "success");
+        handleGetProducts(currentPage, countOnPage, searchChar);
+      }
+    }
   };
 
   useEffect(() => {
