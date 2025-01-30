@@ -1,7 +1,5 @@
 import { ErrorMessage, FastField, Field } from "formik";
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormikError from "./FormikError";
 
 // if resultType == "string" then:  "1-2-3"  else:   [1,2,3]

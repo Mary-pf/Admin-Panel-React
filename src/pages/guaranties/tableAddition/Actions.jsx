@@ -1,4 +1,4 @@
-const Actions = ({ rowData, setGuaranteeToEdit, handleDeleteGuarantee }) => {
+const Actions = ({ rowData, setguarantyToEdit, handleDeleteguaranty }) => {
   return (
     <>
       <i
@@ -6,8 +6,8 @@ const Actions = ({ rowData, setGuaranteeToEdit, handleDeleteGuarantee }) => {
         title="ویرایش گارانتی"
         data-bs-placement="top"
         data-bs-toggle="modal"
-        data-bs-target="#add_guarantee_modal"
-        onClick={() => setGuaranteeToEdit(rowData)}
+        data-bs-target="#add_guaranty_modal"
+        onClick={() => setguarantyToEdit(rowData)}
       ></i>
 
       <i
@@ -16,7 +16,7 @@ const Actions = ({ rowData, setGuaranteeToEdit, handleDeleteGuarantee }) => {
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         onClick={() => {
-          handleDeleteGuarantee(rowData);
+          handleDeleteguaranty(rowData);
         }}
       ></i>
     </>

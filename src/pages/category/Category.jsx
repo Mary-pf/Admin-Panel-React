@@ -1,4 +1,3 @@
-import React from "react";
 import CategoryContextContainer from "../../context/categoryContext";
 import Categorytable from "./CategoryTable";
 

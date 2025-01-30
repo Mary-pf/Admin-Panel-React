@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AddButtonLink from "../../components/AddButtonLink";
-import PaginatedDataTable from "../../components/PaginatedTable.jsx";
+import PaginatedDataTable from "../../components/PaginatedDataTable";
+import { useHasPermission } from "../../hook/permissionsHook";
 import {
   deleteProductService,
   getProductsService,
@@ -14,9 +15,11 @@ const TableProduct = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchChar, setSearchChar] = useState("");
-  const [currentPage, setCurrentPage] = useState(1); //صفحه حال حاضر
-  const [countOnPage, setCountOnPage] = useState(1); //تعداد محصول در هر صفحه
-  const [pageCount, setPageCount] = useState(0); //تعداد کل صفحات
+  const [currentPage, setCurrentPage] = useState(1); // صفحه حال حاضر
+  const [countOnPage, setCountOnPage] = useState(10); // تعداد محصول در هر صفحه
+  const [pageCount, setPageCount] = useState(0); // تعداد کل صفحات
+
+  const hasAddProductPerm = useHasPermission("create_product");
 
   const dataInfo = [
     { field: "id", title: "#" },
@@ -24,13 +27,6 @@ const TableProduct = () => {
       field: null,
       title: "گروه محصول",
       elements: (rowData) => rowData.categories[0]?.title,
-    },
-    {
-      field: null,
-      title: "توضیحات محصول",
-      elements: (rowData) => (
-        <span dangerouslySetInnerHTML={{ __html: rowData.descriptions }}></span>
-      ),
     },
     { field: "title", title: "عنوان" },
     { field: "price", title: "قیمت" },
@@ -43,7 +39,6 @@ const TableProduct = () => {
       ),
     },
   ];
-
   const searchParams = {
     title: "جستجو",
     placeholder: "قسمتی از عنوان را وارد کنید",
@@ -91,7 +86,7 @@ const TableProduct = () => {
       pageCount={pageCount}
       handleSearch={handleSearch}
     >
-      <AddButtonLink href={"/products/add-product"} />
+      {hasAddProductPerm && <AddButtonLink href={"/products/add-product"} />}
     </PaginatedDataTable>
   );
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import AddColor from "./AddColor";
 import ColorsTable from "./ColorsTable";
 

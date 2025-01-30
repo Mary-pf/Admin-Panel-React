@@ -1,5 +1,4 @@
 import { FastField } from "formik";
-import React from "react";
 import SpinnerLoad from "../SpinnerLoad";
 
 const SubmitButton = () => {

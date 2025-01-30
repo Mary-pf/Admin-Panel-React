@@ -1,5 +1,4 @@
 import { ErrorMessage, FastField, Field } from "formik";
-import React from "react";
 import FormikError from "./FormikError";
 
 const Select = ({
@@ -54,9 +53,11 @@ const Select = ({
             );
           }}
         </Field>
-        <span className="input-group-text w_6rem justify-content-center">
-          {label}
-        </span>
+        {label && (
+          <span className="input-group-text w_6rem justify-content-center">
+            {label}
+          </span>
+        )}
       </div>
       <ErrorMessage name={name} component={FormikError} />
     </div>

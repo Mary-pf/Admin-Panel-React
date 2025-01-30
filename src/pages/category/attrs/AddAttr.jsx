@@ -1,8 +1,7 @@
-import React from "react";
 import { Form, Formik } from "formik";
 import FormikControl from "../../../components/form/FormikControl";
 import SubmitButton from "../../../components/form/SubmitButton";
-import { initialValues, onSubmit, validationSchema } from "./core";
+import { initialValues, onSubmit, validationSchema } from "./core.js";
 
 const AddAttr = ({
   reInitValues,

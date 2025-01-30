@@ -1,14 +1,7 @@
-import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import AdminContextContainer, {
-  AdminContext,
-} from "../../context/adminLayoutContext";
+import AdminContextContainer from "../../context/adminLayoutContext";
 import { useIsLogin } from "../../hook/authHook.js";
-import Category from "../../pages/category/Category";
 import Content from "../../pages/Content";
-import Dashboard from "../../pages/dashboard/Dashboard";
-import { toggleSidebar } from "../../utils/initialDoms.js";
 import Navbar from "./navber/Index.jsx";
 import Sidebar from "./sidebar/Index.jsx";
 

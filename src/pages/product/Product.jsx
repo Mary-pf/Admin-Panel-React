@@ -1,4 +1,3 @@
-import React from "react";
 import TableProduct from "./TableProduct";
 
 const Product = () => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PaginatedTable from "../../components/PaginatedTable";
-import { getAllPermissionsService } from "../../services/users";
+import { getAllPermissionsService } from "../../services/users.js";
 
 const PermissionsTable = () => {
   const [data, setData] = useState([]);

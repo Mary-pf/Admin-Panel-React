@@ -5,10 +5,10 @@ import FormikControl from "../../components/form/FormikControl";
 import SubmitButton from "../../components/form/SubmitButton";
 import PrevPageButton from "../../components/PrevPageButton";
 import SpinnerLoad from "../../components/SpinnerLoad";
-import { getAllBrandsService } from "../../services/brands";
-import { getCategoriesService } from "../../services/category";
-import { getAllColorsService } from "../../services/colors";
-import { getAllGuaranteesService } from "../../services/guaranties";
+import { getAllBrandsService } from "../../services/brands.js";
+import { getCategoriesService } from "../../services/category.js";
+import { getAllColorsService } from "../../services/colors.js";
+import { getAllGuarantiesService } from "../../services/guaranties.js";
 import { initialValues, onSubmit, validationSchema } from "./core.js";
 
 const AddProduct = () => {
@@ -18,13 +18,13 @@ const AddProduct = () => {
 
   const [selectedCategories, setSelectedCategories] = useState([]); // used in editting
   const [selectedColors, setSelectedColors] = useState([]); // used in editting
-  const [selectedGuarantees, setSelectedGuarantees] = useState([]); // used in editting
+  const [selectedGuaranties, setSelectedGuaranties] = useState([]); // used in editting
 
   const [parentCategories, setparentCategories] = useState([]);
   const [mainCategories, setMainCategories] = useState([]);
   const [brands, setBrands] = useState([]);
   const [colors, setColors] = useState([]);
-  const [guarantees, setGuarantees] = useState([]);
+  const [Guaranties, setGuaranties] = useState([]);
 
   const getAllParentCategories = async () => {
     const res = await getCategoriesService();
@@ -56,10 +56,10 @@ const AddProduct = () => {
       );
     }
   };
-  const getAllGuarantees = async () => {
-    const res = await getAllGuaranteesService();
+  const getAllGuaranties = async () => {
+    const res = await getAllGuarantiesService();
     if (res.status === 200) {
-      setGuarantees(
+      setGuaranties(
         res.data.data.map((d) => {
           return { id: d.id, value: d.title };
         }),
@@ -78,8 +78,8 @@ const AddProduct = () => {
           return { id: c.id, value: c.title };
         }),
       );
-      setSelectedGuarantees(
-        productToEdit.guarantees.map((c) => {
+      setSelectedGuaranties(
+        productToEdit.Guaranties.map((c) => {
           return { id: c.id, value: c.title };
         }),
       );
@@ -89,7 +89,7 @@ const AddProduct = () => {
     getAllParentCategories();
     getAllBrands();
     getAllColors();
-    getAllGuarantees();
+    getAllGuaranties();
     setInitialSelectedValues();
     for (const key in productToEdit) {
       if (productToEdit[key] === null) productToEdit[key] = "";
@@ -99,7 +99,8 @@ const AddProduct = () => {
         ...productToEdit,
         category_ids: productToEdit.categories.map((c) => c.id).join("-"),
         color_ids: productToEdit.colors.map((c) => c.id).join("-"),
-        guarantee_ids: productToEdit.guarantees.map((g) => g.id).join("-"),
+        guaranty_ids: productToEdit.Guaranties.map((g) => g.id).join("-"),
+        image: "",
       });
     else setReInitialValues(null);
   }, []);
@@ -223,20 +224,21 @@ const AddProduct = () => {
                   label="گارانتی"
                   className="col-md-6 col-lg-8"
                   control="searchableSelect"
-                  options={guarantees}
-                  name="guarantee_ids"
+                  options={Guaranties}
+                  name="guaranty_ids"
                   firstItem="گارانتی مورد نظر را انتخاب کنبد..."
                   resultType="string"
-                  initialItems={selectedGuarantees}
+                  initialItems={selectedGuaranties}
                 />
 
                 {/* <FormikControl
-                  label="توضیحات"
-                  className="col-md-6 col-lg-8"
-                  control="textarea"
-                  name="descriptions"
-                  placeholder="فقط از حروف واعداد استفاده شود"
-                /> */}
+                    label="توضیحات"
+                    className="col-md-6 col-lg-8"
+                    control="textarea"
+                    name="descriptions"
+                    placeholder="فقط از حروف واعداد استفاده شود"
+                  /> */}
+
                 <FormikControl
                   label="توضیحات"
                   className="col-md-6 col-lg-8"

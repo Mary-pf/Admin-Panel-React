@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CategoryContext } from "../../../context/categoryContext";
+import ActionIcon from "../../../components/ActionIcon";
 
 const Actions = ({ rowData, handleDeleteCategory }) => {
   const navigate = useNavigate();
@@ -9,11 +10,10 @@ const Actions = ({ rowData, handleDeleteCategory }) => {
   return (
     <>
       {!params.categoryId ? (
-        <i
-          className="fas fa-project-diagram text-info mx-1 hoverable_text pointer has_tooltip"
+        <ActionIcon
+          icon="fas fa-project-diagram text-info"
+          pTitle="read_categor"
           title="زیرمجموعه"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
           onClick={() =>
             navigate(`/categories/${rowData.id}`, {
               state: {
@@ -21,21 +21,22 @@ const Actions = ({ rowData, handleDeleteCategory }) => {
               },
             })
           }
-        ></i>
+        />
       ) : null}
-      <i
-        className="fas fa-edit text-warning mx-1 hoverable_text pointer has_tooltip"
+
+      <ActionIcon
+        icon="fas fa-edit text-warning"
+        pTitle="update_category"
         title="ویرایش دسته"
-        data-bs-placement="top"
-        data-bs-toggle="modal"
         data-bs-target="#add_product_category_modal"
         onClick={() => setEditId(rowData.id)}
-      ></i>
+      />
+
       {params.categoryId ? (
-        <i
-          className="fas fa-receipt text-success mx-1 hoverable_text pointer has_tooltip"
+        <ActionIcon
+          icon="fas fa-receipt text-primary"
+          pTitle="create_category_attr"
           title="افزودن ویژگی"
-          data-bs-placement="top"
           onClick={() =>
             navigate(`/categories/${rowData.id}/attributes`, {
               state: {
@@ -43,15 +44,15 @@ const Actions = ({ rowData, handleDeleteCategory }) => {
               },
             })
           }
-        ></i>
+        />
       ) : null}
-      <i
-        className="fas fa-times text-danger mx-1 hoverable_text pointer has_tooltip"
+
+      <ActionIcon
+        icon="fas fa-times text-danger"
+        pTitle="delete_category"
         title="حذف دسته"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
         onClick={() => handleDeleteCategory(rowData)}
-      ></i>
+      />
     </>
   );
 };

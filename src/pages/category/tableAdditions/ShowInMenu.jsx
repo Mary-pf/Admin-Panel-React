@@ -1,5 +1,3 @@
-import React from "react";
-
 const ShowInMenu = ({ rowData }) => {
   return (
     <span className={rowData.show_in_menu ? "text-success" : "text-danger"}>

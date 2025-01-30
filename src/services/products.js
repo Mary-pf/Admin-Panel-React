@@ -12,6 +12,10 @@ export const getAllProductTitlesService = () => {
   return httpService(`/admin/products/all_titles`, "get");
 };
 
+export const getOneProductService = (productId) => {
+  return httpService(`/admin/products/${productId}`, "get");
+};
+
 export const createNewProductService = (data) => {
   return httpService(
     "/admin/products",
@@ -42,4 +46,11 @@ export const deleteProductImageService = (imageId) => {
 
 export const setMainProductImageService = (imageId) => {
   return httpService(`/admin/products/gallery/set_main/${imageId}`, "get");
+};
+
+export const getFewerProductsService = () => {
+  return httpService(`/admin/products/fewer_products`, "get");
+};
+export const toggleNotificationService = (productId) => {
+  return httpService(`/admin/products/toggle_notification/${productId}`, "get");
 };

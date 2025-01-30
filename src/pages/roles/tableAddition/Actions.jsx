@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+
 const Actions = ({ rowData, handleDeleteRole }) => {
   const navigate = useNavigate();
   return (

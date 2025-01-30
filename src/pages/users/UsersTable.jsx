@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import AddButtonLink from "../../components/AddButtonLink";
 import PaginatedDataTable from "../../components/PaginatedDataTable";
+import { deleteProductService } from "../../services/products.js";
 import {
   getAllPaginatedUsersService,
   getAllUsersService,
-} from "../../services/users";
-import { Alert, Confirm } from "../../utils/alerts";
+} from "../../services/users.js";
+import { Alert, Confirm } from "../../utils/alerts.js";
 import Actions from "./tableAddition/Actions";
 import Roles from "./tableAddition/Roles";
 

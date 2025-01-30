@@ -1,5 +1,4 @@
 import { ErrorMessage, FastField } from "formik";
-import React from "react";
 import FormikError from "./FormikError";
 
 const Textarea = ({ name, label, className, placeholder }) => {

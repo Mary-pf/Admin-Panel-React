@@ -1,8 +1,8 @@
 import { Alert } from "../../utils/alerts.js";
 import * as Yup from "yup";
 import {
-  addNewGuaranteeService,
-  editGuaranteeService,
+  addNewGuarantieservice,
+  editGuarantieservice,
 } from "../../services/guaranties.js";
 
 export const initialValues = {
@@ -12,20 +12,20 @@ export const initialValues = {
   length_unit: "",
 };
 
-export const onSubmit = async (values, actions, setData, guaranteeToEdit) => {
-  if (guaranteeToEdit) {
-    const res = await editGuaranteeService(guaranteeToEdit.id, values);
+export const onSubmit = async (values, actions, setData, guarantyToEdit) => {
+  if (guarantyToEdit) {
+    const res = await editGuarantieservice(guarantyToEdit.id, values);
     if (res.status === 200) {
       Alert("انجام شد", res.data.message, "success");
       setData((lastData) => {
         let newData = [...lastData];
-        let index = newData.findIndex((d) => d.id == guaranteeToEdit.id);
+        let index = newData.findIndex((d) => d.id == guarantyToEdit.id);
         newData[index] = res.data.data;
         return newData;
       });
     }
   } else {
-    const res = await addNewGuaranteeService(values);
+    const res = await addNewGuarantieservice(values);
     if (res.status === 201) {
       Alert("انجام شد", res.data.message, "success");
       setData((lastData) => [...lastData, res.data.data]);

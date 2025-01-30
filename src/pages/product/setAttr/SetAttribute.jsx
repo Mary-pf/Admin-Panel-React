@@ -1,15 +1,13 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { data, useLocation } from "react-router-dom";
 import SubmitButton from "../../../components/form/SubmitButton";
 import ModalsContainer from "../../../components/ModalsContainer";
 import PrevPageButton from "../../../components/PrevPageButton";
 import SpinnerLoad from "../../../components/SpinnerLoad";
-import { getCategoryAttrsService } from "../../../services/categoryAttr";
+import { getCategoryAttrsService } from "../../../services/categoryAttr.js";
 import * as Yup from "yup";
-import { initializingData } from "./core";
+import { initializingData } from "./core.js";
 
 const SetAttribute = () => {
   const location = useLocation();

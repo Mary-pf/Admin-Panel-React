@@ -1069,7 +1069,7 @@
     </div>
     <!--  #endregion  -->
     
-    <!-- #region(collapsed) add guarantee modal  -->
+    <!-- #region(collapsed) add guaranty modal  -->
     <div class="modal fade" id="add_delivery_modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

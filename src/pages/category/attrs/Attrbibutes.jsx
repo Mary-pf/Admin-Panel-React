@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import PaginatedTable from "../../../components/PaginatedTable";
 import PrevPageButton from "../../../components/PrevPageButton";
 import {
   deleteCategoryAttrService,
   getCategoryAttrsService,
-} from "../../../services/categoryAttr";
+} from "../../../services/categoryAttr.js";
 import AttrAction from "./AttrAction";
 import ShowInFilter from "./ShowInFilter";
-import { Alert, Confirm } from "../../../utils/alerts";
+import { Alert, Confirm } from "../../../utils/alerts.js";
 import AddAttr from "./AddAttr";
 
 const Attributes = () => {

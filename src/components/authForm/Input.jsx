@@ -1,5 +1,4 @@
 import { FastField } from "formik";
-import React from "react";
 
 const Input = ({ formik, type, name, icon, label }) => {
   return (

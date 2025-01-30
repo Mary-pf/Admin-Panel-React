@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { logoutService } from "../../services/auth";
-import { Alert } from "../../utils/alerts";
+import { logoutService } from "../../services/auth.js";
+import { Alert } from "../../utils/alerts.js";
 
 const Logout = () => {
   const [loading, setLoading] = useState(true);

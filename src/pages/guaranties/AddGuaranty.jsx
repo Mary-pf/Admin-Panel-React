@@ -1,37 +1,37 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ModalsContainer from "../../components/ModalsContainer";
 import { Formik, Form } from "formik";
 import FormikControl from "../../components/form/FormikControl";
 import SubmitButton from "../../components/form/SubmitButton";
 import { useEffect } from "react";
-import { initialValues, onSubmit, validationSchema } from "./core";
+import { initialValues, onSubmit, validationSchema } from "./core.js";
 import { from } from "jalali-moment";
 
-const AddGuaranty = ({ setData, guaranteeToEdit, setGuaranteeToEdit }) => {
+const AddGuaranty = ({ setData, guarantyToEdit, setguarantyToEdit }) => {
   const [reInitValues, setReInitValues] = useState(null);
   useEffect(() => {
-    if (guaranteeToEdit)
+    if (guarantyToEdit)
       setReInitValues({
-        title: guaranteeToEdit.title,
-        descriptions: guaranteeToEdit.descriptions || "",
-        length: guaranteeToEdit.length || "",
-        length_unit: guaranteeToEdit.length_unit || "",
+        title: guarantyToEdit.title,
+        descriptions: guarantyToEdit.descriptions || "",
+        length: guarantyToEdit.length || "",
+        length_unit: guarantyToEdit.length_unit || "",
       });
     else setReInitValues(null);
-  }, [guaranteeToEdit]);
+  }, [guarantyToEdit]);
 
   return (
     <>
       <button
         className="btn btn-success d-flex justify-content-center align-items-center"
         data-bs-toggle="modal"
-        data-bs-target="#add_guarantee_modal"
+        data-bs-target="#add_guaranty_modal"
       >
         <i className="fas fa-plus text-light"></i>
       </button>
       <ModalsContainer
-        id="add_guarantee_modal"
-        title={guaranteeToEdit ? "ویرایش گارانتی" : "افزودن گارانتی"}
+        id="add_guaranty_modal"
+        title={guarantyToEdit ? "ویرایش گارانتی" : "افزودن گارانتی"}
         fullScreen={false}
       >
         <div className="container">
@@ -39,7 +39,7 @@ const AddGuaranty = ({ setData, guaranteeToEdit, setGuaranteeToEdit }) => {
             <Formik
               initialValues={reInitValues || initialValues}
               onSubmit={(values, actions) =>
-                onSubmit(values, actions, setData, guaranteeToEdit)
+                onSubmit(values, actions, setData, guarantyToEdit)
               }
               validationSchema={validationSchema}
               enableReinitialize

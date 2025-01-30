@@ -2,15 +2,15 @@ import { useContext, useEffect, useState } from "react";
 import ModalsContainer from "../../components/ModalsContainer";
 import { Form, Formik } from "formik";
 import FormikControl from "../../components/form/FormikControl";
-import { Alert } from "../../utils/alerts";
+import { Alert } from "../../utils/alerts.js";
 import {
   getCategoriesService,
   getSingleCategoryService,
-} from "../../services/category";
+} from "../../services/category.js";
 import SubmitButton from "../../components/form/SubmitButton";
 import { useParams } from "react-router-dom";
 import { CategoryContext } from "../../context/categoryContext";
-import { initialValues, onSubmit, validationSchema } from "./core";
+import { initialValues, onSubmit, validationSchema } from "./core.js";
 
 const Addcategory = ({ setForceRender }) => {
   const params = useParams();

@@ -1,17 +1,17 @@
 import httpService from "./httpService.js";
 
-export const getAllGuaranteesService = () => {
+export const getAllGuarantiesService = () => {
   return httpService("/admin/guarantees", "get");
 };
 
-export const addNewGuaranteeService = (data) => {
+export const addNewGuarantieservice = (data) => {
   return httpService("/admin/guarantees", "post", data);
 };
 
-export const editGuaranteeService = (guaranteeId, data) => {
-  return httpService(`/admin/guarantees/${guaranteeId}`, "put", data);
+export const editGuarantieservice = (guarantyId, data) => {
+  return httpService(`/admin/guarantees/${guarantyId}`, "put", data);
 };
 
-export const deleteGuaranteeService = (guaranteeId) => {
-  return httpService(`/admin/guarantees/${guaranteeId}`, "delete");
+export const deleteGuarantieservice = (guarantyId) => {
+  return httpService(`/admin/guarantees/${guarantyId}`, "delete");
 };

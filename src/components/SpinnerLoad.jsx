@@ -1,5 +1,3 @@
-import React from "react";
-
 const SpinnerLoad = ({ colorClass, isSmall, inline }) => {
   return (
     <span

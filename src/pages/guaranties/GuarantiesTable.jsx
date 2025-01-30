@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PaginatedTable from "../../components/PaginatedTable";
 import {
-  deleteGuaranteeService,
-  getAllGuaranteesService,
+  deleteGuarantieservice,
+  getAllGuarantiesService,
 } from "../../services/guaranties.js";
 import { Alert, Confirm } from "../../utils/alerts.js";
 import AddGuaranty from "./AddGuaranty";
@@ -11,7 +11,7 @@ import Actions from "./tableAddition/Actions";
 const GuarantiesTable = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [guaranteeToEdit, setGuaranteeToEdit] = useState(null);
+  const [guarantyToEdit, setguarantyToEdit] = useState(null);
 
   const dataInfo = [
     { field: "id", title: "#" },
@@ -24,8 +24,8 @@ const GuarantiesTable = () => {
       elements: (rowData) => (
         <Actions
           rowData={rowData}
-          setGuaranteeToEdit={setGuaranteeToEdit}
-          handleDeleteGuarantee={handleDeleteGuarantee}
+          setguarantyToEdit={setguarantyToEdit}
+          handleDeleteguaranty={handleDeleteguaranty}
         />
       ),
     },
@@ -37,29 +37,29 @@ const GuarantiesTable = () => {
     searchField: "title",
   };
 
-  const handleGetAllGuarantees = async () => {
+  const handleGetAllGuaranties = async () => {
     setLoading(true);
-    const res = await getAllGuaranteesService();
+    const res = await getAllGuarantiesService();
     res && setLoading(false);
     if (res.status === 200) {
       setData(res.data.data);
     }
   };
 
-  const handleDeleteGuarantee = async (guarantee) => {
+  const handleDeleteguaranty = async (guaranty) => {
     if (
-      await Confirm("حذف برند", `آیا از حذف ${guarantee.title} اطمینان دارید؟`)
+      await Confirm("حذف برند", `آیا از حذف ${guaranty.title} اطمینان دارید؟`)
     ) {
-      const res = await deleteGuaranteeService(guarantee.id);
+      const res = await deleteGuarantieservice(guaranty.id);
       if (res.status === 200) {
         Alert("انجام شد", res.data.message, "success");
-        setData((lastData) => lastData.filter((d) => d.id != guarantee.id));
+        setData((lastData) => lastData.filter((d) => d.id != guaranty.id));
       }
     }
   };
 
   useEffect(() => {
-    handleGetAllGuarantees();
+    handleGetAllGuaranties();
   }, []);
   return (
     <PaginatedTable
@@ -71,8 +71,8 @@ const GuarantiesTable = () => {
     >
       <AddGuaranty
         setData={setData}
-        guaranteeToEdit={guaranteeToEdit}
-        setGuaranteeToEdit={setGuaranteeToEdit}
+        guarantyToEdit={guarantyToEdit}
+        setguarantyToEdit={setguarantyToEdit}
       />
     </PaginatedTable>
   );

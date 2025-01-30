@@ -7,8 +7,8 @@ import FormikControl from "../../components/form/FormikControl";
 import { initialValues, onSubmit, validationSchema } from "./core.js";
 import {
   getAllPermissionsService,
-  getSinglrRoleService,
-} from "../../services/users";
+  getSinglrUserService,
+} from "../../services/users.js";
 
 const AddRole = () => {
   const { setData } = useOutletContext();

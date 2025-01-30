@@ -21,3 +21,5 @@ const Actions = ({ rowData, handleDeleteUser }) => {
     </>
   );
 };
+
+export default Actions;

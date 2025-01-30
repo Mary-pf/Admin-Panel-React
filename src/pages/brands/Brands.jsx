@@ -1,4 +1,3 @@
-import React from "react";
 import AddBrands from "./AddBrands";
 import Brandstable from "./BrandsTable";
 

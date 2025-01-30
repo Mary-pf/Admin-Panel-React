@@ -12,7 +12,7 @@ export const initialValues = {
   weight: "",
   brand_id: "",
   color_ids: "",
-  guarantee_ids: "",
+  guaranty_ids: "",
   descriptions: "",
   short_descriptions: "",
   cart_descriptions: "",
@@ -55,7 +55,7 @@ export const validationSchema = Yup.object({
     /^[0-9\s-]+$/,
     "فقط ازاعداد و خط تیره استفاده شود",
   ),
-  guarantee_ids: Yup.string().matches(
+  guaranty_ids: Yup.string().matches(
     /^[0-9\s-]+$/,
     "فقط ازاعداد و خط تیره استفاده شود",
   ),

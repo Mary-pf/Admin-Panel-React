@@ -1,7 +1,6 @@
-import React from "react";
 import ModalsContainer from "../../components/ModalsContainer";
 import { Formik, Form } from "formik";
-import { initialValues, onSubmit, validationSchema } from "./core";
+import { initialValues, onSubmit, validationSchema } from "./core.js";
 import FormikControl from "../../components/form/FormikControl";
 import SubmitButton from "../../components/form/SubmitButton";
 

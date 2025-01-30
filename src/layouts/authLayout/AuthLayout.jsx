@@ -1,4 +1,3 @@
-import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useIsLogin } from "../../hook/authHook.js";
 import Login from "../../pages/auth/Login";
