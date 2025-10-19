@@ -1,6 +1,6 @@
 import * as Yup from "yup";
-import { getCategoryAttrsService } from "../../../services/categoryAttr.js";
-import { addProductAttrService } from "../../../services/products.js";
+import { getCategoryAttrsService } from "../../../services/categoryAttr.jsx";
+import { addProductAttrService } from "../../../services/products.jsx";
 import { Alert } from "../../../utils/alerts.js";
 
 export const onSubmit = async (values, actions, productId) => {

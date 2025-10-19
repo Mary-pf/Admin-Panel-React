@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import {
   createNewProductService,
   editProductService,
-} from "../../services/products.js";
+} from "../../services/products.jsx";
 import { Alert } from "../../utils/alerts.js";
 
 export const initialValues = {

@@ -1,9 +1,9 @@
 import { useLocation } from "react-router-dom";
 import PrevPageButton from "../../../components/PrevPageButton.jsx";
 import SubmitButton from "../../../components/form/SubmitButton.jsx";
-import { apiPath } from "../../../services/httpService.js";
+import { apiPath } from "../../../services/httpService.jsx";
 import { useState } from "react";
-import { addProductImage } from "../../../services/products.js";
+import { addProductImageService } from "../../../services/products.jsx";
 import { Alert } from "../../../utils/alerts.js";
 import SpinnerLoad from "../../../components/SpinnerLoad.jsx";
 

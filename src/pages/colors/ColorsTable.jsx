@@ -3,7 +3,7 @@ import PaginatedTable from "../../components/PaginatedTable";
 import {
   deleteColorService,
   getAllColorsService,
-} from "../../services/colors.js";
+} from "../../services/colors.jsx";
 import { Alert, Confirm } from "../../utils/alerts.js";
 import AddColor from "./AddColor";
 import Actions from "./tableAddition/Actions";

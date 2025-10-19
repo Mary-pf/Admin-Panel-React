@@ -5,7 +5,7 @@ import SubmitButton from "../../../components/form/SubmitButton";
 import ModalsContainer from "../../../components/ModalsContainer";
 import PrevPageButton from "../../../components/PrevPageButton";
 import SpinnerLoad from "../../../components/SpinnerLoad";
-import { getCategoryAttrsService } from "../../../services/categoryAttr.js";
+import { getCategoryAttrsService } from "../../../services/categoryAttr.jsx";
 import * as Yup from "yup";
 import { initializingData } from "./core.js";
 

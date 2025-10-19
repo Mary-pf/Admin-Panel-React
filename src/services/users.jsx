@@ -1,4 +1,4 @@
-import httpService from "./httpService.js";
+import httpService from "./httpService.jsx";
 
 export const getAllPermissionsService = () => {
   return httpService("/admin/permissions", "get");

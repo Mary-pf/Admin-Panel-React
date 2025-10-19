@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import {
   addNewGuarantieservice,
   editGuarantieservice,
-} from "../../services/guaranties.js";
+} from "../../services/guaranties.jsx";
 
 export const initialValues = {
   title: "",

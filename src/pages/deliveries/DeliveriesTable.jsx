@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import AddButtonLink from "../../components/AddButtonLink";
-import PaginatedTable from "../../components/PaginatedTable";
+import AddButtonLink from "../../components/AddButtonLink.jsx";
+import PaginatedTable from "../../components/PaginatedTable.jsx";
 import {
   deleteDeliveryService,
   getAllDeliveriesService,
-} from "../../services/deliveries.js";
+} from "../../services/deliveries.jsx";
 import { Alert, Confirm } from "../../utils/alerts.js";
 import { convertDateToJalali } from "../../utils/convertDate.js";
 import Actions from "./tableAddition/Actions";

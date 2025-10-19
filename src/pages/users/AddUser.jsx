@@ -8,7 +8,7 @@ import SubmitButton from "../../components/form/SubmitButton";
 import {
   getAllRolesService,
   getSinglrUserService,
-} from "../../services/users.js";
+} from "../../services/users.jsx";
 import { convertDateToJalali } from "../../utils/convertDate.js";
 
 const AddUser = () => {

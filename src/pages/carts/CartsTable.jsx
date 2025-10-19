@@ -5,7 +5,7 @@ import PaginatedDataTable from "../../components/PaginatedDataTable";
 import {
   deleteCartService,
   getAllPaginatedCartsService,
-} from "../../services/carts.js";
+} from "../../services/carts.jsx";
 import { Alert, Confirm } from "../../utils/alerts.js";
 import Actions from "./tableAddition/Actions";
 

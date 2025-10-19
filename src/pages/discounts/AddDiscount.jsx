@@ -6,7 +6,7 @@ import { initialValues, onSubmit, validationSchema } from "./core.js";
 import SubmitButton from "../../components/form/SubmitButton";
 import { useState } from "react";
 import { useEffect } from "react";
-import { getAllProductTitlesService } from "../../services/products.js";
+import { getAllProductTitlesService } from "../../services/products.jsx";
 import { useLocation } from "react-router-dom";
 import { convertDateToJalali } from "../../utils/convertDate.js";
 

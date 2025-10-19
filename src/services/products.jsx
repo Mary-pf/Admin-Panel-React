@@ -1,5 +1,5 @@
 import { convertDataToFormdata } from "../utils/convertDate.js";
-import httpService from "./httpService.js";
+import httpService from "./httpService.jsx";
 
 export const getProductsService = (page, countOnPage, searchChar) => {
   return httpService(

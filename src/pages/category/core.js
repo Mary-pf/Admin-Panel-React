@@ -1,7 +1,7 @@
 import {
   createNewCategoryService,
   editCategoryService,
-} from "../../services/category.js";
+} from "../../services/category.jsx";
 import { Alert } from "../../utils/alerts.js";
 import * as Yup from "yup";
 

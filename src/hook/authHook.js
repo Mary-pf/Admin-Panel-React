@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { getUserService } from "../services/auth.js";
+import { getUserService } from "../services/auth.jsx";
 import { useDispatch } from "react-redux";
 import { receiveUserResponse } from "../redux/user/userActions.js";
 

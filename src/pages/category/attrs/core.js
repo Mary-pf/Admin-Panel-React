@@ -1,7 +1,7 @@
 import {
   addCategoryAttrService,
   editCategoryAttrService,
-} from "../../../services/categoryAttr.js";
+} from "../../../services/categoryAttr.jsx";
 import * as Yup from "yup";
 import { Alert } from "../../../utils/alerts.js";
 

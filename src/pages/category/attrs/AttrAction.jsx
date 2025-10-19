@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import PaginatedTable from "../../../components/PaginatedTable";
-import PrevPageButton from "../../../components/PrevPageButton";
+import PaginatedTable from "../../../components/PaginatedTable.jsx";
+import PrevPageButton from "../../../components/PrevPageButton.jsx";
 import {
   deleteCategoryAttrService,
   getCategoryAttrsService,

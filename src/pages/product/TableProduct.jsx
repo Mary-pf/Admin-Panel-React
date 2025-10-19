@@ -6,7 +6,7 @@ import { useHasPermission } from "../../hook/permissionsHook";
 import {
   deleteProductService,
   getProductsService,
-} from "../../services/products.js";
+} from "../../services/products.jsx";
 import { Alert, Confirm } from "../../utils/alerts.js";
 import AddProduct from "./AddProduct";
 import Actions from "./tableAddition/Actions";

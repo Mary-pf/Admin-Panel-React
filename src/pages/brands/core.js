@@ -1,6 +1,9 @@
 import { Alert } from "../../utils/alerts.js";
 import * as Yup from "yup";
-import { addNewBrandService, editBrandService } from "../../services/brands.js";
+import {
+  addNewBrandService,
+  editBrandService,
+} from "../../services/brands.jsx";
 
 export const initialValues = {
   original_name: "",

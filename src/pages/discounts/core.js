@@ -2,7 +2,7 @@ import { Alert } from "../../utils/alerts.js";
 import * as Yup from "yup";
 import jMoment from "jalali-moment";
 import { convertFormDateToMiladi } from "../../utils/convertDate.js";
-import { addNewDiscountService } from "../../services/discounts.js";
+import { addNewDiscountService } from "../../services/discounts.jsx";
 
 export const initialValues = {
   title: "",

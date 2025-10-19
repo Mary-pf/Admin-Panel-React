@@ -5,7 +5,7 @@ import PaginatedDataTable from "../../components/PaginatedDataTable";
 import {
   deleteOrderService,
   getAllPaginatedOrdersService,
-} from "../../services/orders.js";
+} from "../../services/orders.jsx";
 import { Alert, Confirm } from "../../utils/alerts.js";
 import { convertDateToJalali } from "../../utils/convertDate.js";
 import { numberWithCommas } from "../../utils/numbers.js";

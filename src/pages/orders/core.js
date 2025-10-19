@@ -1,7 +1,7 @@
 import { Alert } from "../../utils/alerts.js";
 import * as Yup from "yup";
 import { convertFormDateToMiladi } from "../../utils/convertDate.js";
-import { addNewOrderService } from "../../services/orders.js";
+import { addNewOrderService } from "../../services/orders.jsx";
 
 export const initialValues = {
   cart_id: "",

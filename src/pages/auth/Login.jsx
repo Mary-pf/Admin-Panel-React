@@ -4,8 +4,8 @@ import AuthFormikControl from "../../components/authForm/AuthFormikControl";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "../../utils/alerts.js";
-import httpService from "../../services/httpService.js";
-import { loginService } from "../../services/auth.js";
+import httpService from "../../services/httpService.jsx";
+import { loginService } from "../../services/auth.jsx";
 
 const initialValues = {
   phone: "",

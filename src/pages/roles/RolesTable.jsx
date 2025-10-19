@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AddButtonLink from "../../components/AddButtonLink";
 import PaginatedTable from "../../components/PaginatedTable";
-import { getAllRolesService } from "../../services/users.js";
+import { getAllRolesService } from "../../services/users.jsx";
 import { Alert, Confirm } from "../../utils/alerts.js";
 import AddRole from "./AddRole";
 import Actions from "./tableAddition/Actions";

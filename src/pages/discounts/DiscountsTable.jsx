@@ -5,7 +5,7 @@ import PaginatedTable from "../../components/PaginatedTable";
 import {
   deleteDiscountService,
   getAllDiscountsService,
-} from "../../services/discounts.js";
+} from "../../services/discounts.jsx";
 import { convertDateToJalali } from "../../utils/convertDate.js";
 import Actions from "./tableAddition/Actions";
 import { Alert, Confirm } from "../../utils/alerts.js";

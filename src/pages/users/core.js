@@ -1,7 +1,7 @@
 import { Alert } from "../../utils/alerts.js";
 import * as Yup from "yup";
 import { convertFormDateToMiladi } from "../../utils/convertDate.js";
-import { addNewUserService } from "../../services/users.js";
+import { addNewUserService } from "../../services/users.jsx";
 
 export const initialValues = {
   user_name: "",

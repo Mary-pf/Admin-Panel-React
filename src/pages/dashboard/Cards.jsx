@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SpinnerLoad from "../../components/SpinnerLoad";
-import { getOrdersStatisticsService } from "../../services/orders.js";
+import { getOrdersStatisticsService } from "../../services/orders.jsx";
 import Card from "./Card";
 
 const cardObjects = [

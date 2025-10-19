@@ -5,12 +5,12 @@ import { convertFormDateToMiladi } from "../../utils/convertDate.js";
 import {
   addNewDiscountService,
   updateDiscountService,
-} from "../../services/discounts.js";
+} from "../../services/discounts.jsx";
 import {
   addNewRoleService,
   editRolePermissionsService,
   editRoleService,
-} from "../../services/users.js";
+} from "../../services/users.jsx";
 
 export const initialValues = {
   title: "",

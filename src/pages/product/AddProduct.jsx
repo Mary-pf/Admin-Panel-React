@@ -5,10 +5,10 @@ import FormikControl from "../../components/form/FormikControl";
 import SubmitButton from "../../components/form/SubmitButton";
 import PrevPageButton from "../../components/PrevPageButton";
 import SpinnerLoad from "../../components/SpinnerLoad";
-import { getAllBrandsService } from "../../services/brands.js";
-import { getCategoriesService } from "../../services/category.js";
-import { getAllColorsService } from "../../services/colors.js";
-import { getAllGuarantiesService } from "../../services/guaranties.js";
+import { getAllBrandsService } from "../../services/brands.jsx";
+import { getCategoriesService } from "../../services/category.jsx";
+import { getAllColorsService } from "../../services/colors.jsx";
+import { getAllGuarantiesService } from "../../services/guaranties.jsx";
 import { initialValues, onSubmit, validationSchema } from "./core.js";
 
 const AddProduct = () => {

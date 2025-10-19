@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AdminContext } from "../../../context/adminLayoutContext";
+import { AdminContext } from "../../../context/adminLayoutContext.jsx";
 
 const Rightcontent = () => {
   const { setShoeSidebar } = useContext(AdminContext);

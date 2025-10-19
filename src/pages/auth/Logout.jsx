@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { logoutService } from "../../services/auth.js";
+import { logoutService } from "../../services/auth.jsx";
 import { Alert } from "../../utils/alerts.js";
 
 const Logout = () => {

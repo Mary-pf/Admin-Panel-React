@@ -4,8 +4,8 @@ import PaginatedTable from "../../components/PaginatedTable";
 import {
   deleteBrandService,
   getAllBrandsService,
-} from "../../services/brands.js";
-import { apiPath } from "../../services/httpService.js";
+} from "../../services/brands.jsx";
+import { apiPath } from "../../services/httpService.jsx";
 import { Alert, Confirm } from "../../utils/alerts.js";
 import AddBrands from "./AddBrands";
 import Actions from "./tableAdditional/Actions";

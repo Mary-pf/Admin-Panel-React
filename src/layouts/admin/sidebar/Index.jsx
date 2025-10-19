@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useSelector } from "react-redux";
-import { AdminContext } from "../../../context/adminLayoutContext";
+import { AdminContext } from "../../../context/adminLayoutContext.jsx";
 import Avatar from "./Avatar";
 import SidebarGroupTitle from "./SidebarGroupTitle";
 import SidebarItem from "./SidebarItem";

@@ -1,6 +1,9 @@
 import { Alert } from "../../utils/alerts.js";
 import * as Yup from "yup";
-import { addNewColorService, editColorService } from "../../services/colors.js";
+import {
+  addNewColorService,
+  editColorService,
+} from "../../services/colors.jsx";
 
 export const initialValues = {
   title: "",

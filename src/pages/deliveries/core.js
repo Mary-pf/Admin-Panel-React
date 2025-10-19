@@ -5,7 +5,7 @@ import { convertFormDateToMiladi } from "../../utils/convertDate.js";
 import {
   addNewDeliveryService,
   updateDeliveryService,
-} from "../../services/deliveries.js";
+} from "../../services/deliveries.jsx";
 
 export const initialValues = {
   title: "",

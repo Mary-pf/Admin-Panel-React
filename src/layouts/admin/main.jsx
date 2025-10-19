@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import AdminContextContainer from "../../context/adminLayoutContext";
+import AdminContextContainer from "../../context/adminLayoutContext.jsx";
 import { useIsLogin } from "../../hook/authHook.js";
 import Content from "../../pages/Content";
 import Navbar from "./navber/Index.jsx";

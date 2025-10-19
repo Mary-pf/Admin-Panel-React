@@ -4,10 +4,10 @@ import { useLocation, useNavigate, useOutletContext } from "react-router-dom";
 import FormikControl from "../../components/form/FormikControl";
 import SubmitButton from "../../components/form/SubmitButton";
 import ModalsContainer from "../../components/ModalsContainer";
-import { getSinglrCartService } from "../../services/carts.js";
-import { getAllDeliveriesService } from "../../services/deliveries.js";
-import { getOneDiscountService } from "../../services/discounts.js";
-import { getSinglrOrderService } from "../../services/orders.js";
+import { getSinglrCartService } from "../../services/carts.jsx";
+import { getAllDeliveriesService } from "../../services/deliveries.jsx";
+import { getOneDiscountService } from "../../services/discounts.jsx";
+import { getSinglrOrderService } from "../../services/orders.jsx";
 import { Alert } from "../../utils/alerts.js";
 import {
   convertDataToFormdata,

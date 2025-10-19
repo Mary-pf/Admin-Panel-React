@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import ActionIcon from "../../../components/ActionIcon";
+import ActionIcon from "../../../components/ActionIcon.jsx";
 
 const Actions = ({ rowData, handleDeleteOrder }) => {
   const navigation = useNavigate();

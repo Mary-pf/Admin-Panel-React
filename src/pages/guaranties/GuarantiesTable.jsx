@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import PaginatedTable from "../../components/PaginatedTable";
+import PaginatedTable from "../../components/PaginatedTable.jsx";
 import {
   deleteGuarantieservice,
   getAllGuarantiesService,
-} from "../../services/guaranties.js";
+} from "../../services/guaranties.jsx";
 import { Alert, Confirm } from "../../utils/alerts.js";
-import AddGuaranty from "./AddGuaranty";
-import Actions from "./tableAddition/Actions";
+import AddGuaranty from "./AddGuaranty.jsx";
+import Actions from "./tableAddition/Actions.jsx";
 
 const GuarantiesTable = () => {
   const [data, setData] = useState([]);

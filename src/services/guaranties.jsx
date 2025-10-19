@@ -1,4 +1,4 @@
-import httpService from "./httpService.js";
+import httpService from "./httpService.jsx";
 
 export const getAllGuarantiesService = () => {
   return httpService("/admin/guarantees", "get");

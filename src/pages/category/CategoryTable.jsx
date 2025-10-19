@@ -5,7 +5,7 @@ import { useHasPermission } from "../../hook/permissionsHook";
 import {
   deleteCategoryService,
   getCategoriesService,
-} from "../../services/category.js";
+} from "../../services/category.jsx";
 import { Alert, Confirm } from "../../utils/alerts.js";
 import { convertDateToJalali } from "../../utils/convertDate.js";
 import Addcategory from "./AddCategory";

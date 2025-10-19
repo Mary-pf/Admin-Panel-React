@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
-import { AdminContext } from "../context/adminLayoutContext";
+import { AdminContext } from "../context/adminLayoutContext.jsx";
 import Carts from "./carts/Carts";
 import Brands from "./brands/Brands";
 import Category from "./category/Category";

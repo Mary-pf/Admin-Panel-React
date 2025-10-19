@@ -6,10 +6,10 @@ import { Alert } from "../../utils/alerts.js";
 import {
   getCategoriesService,
   getSingleCategoryService,
-} from "../../services/category.js";
+} from "../../services/category.jsx";
 import SubmitButton from "../../components/form/SubmitButton";
 import { useParams } from "react-router-dom";
-import { CategoryContext } from "../../context/categoryContext";
+import { CategoryContext } from "../../context/categoryContext.jsx";
 import { initialValues, onSubmit, validationSchema } from "./core.js";
 
 const Addcategory = ({ setForceRender }) => {

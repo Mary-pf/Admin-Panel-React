@@ -1,4 +1,4 @@
-import { getUserService } from "../../services/auth.js";
+import { getUserService } from "../../services/auth.jsx";
 import {
   RECEIVE_USER_ERROR,
   RECEIVE_USER_RESPONSE,

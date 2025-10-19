@@ -1,4 +1,4 @@
-import httpService from "./httpService.js";
+import httpService from "./httpService.jsx";
 
 export const getAllColorsService = () => {
   return httpService("/admin/colors", "get");

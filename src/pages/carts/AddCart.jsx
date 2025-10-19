@@ -8,13 +8,13 @@ import "react-select-search/style.css";
 import {
   getAllProductTitlesService,
   getOneProductService,
-} from "../../services/products.js";
+} from "../../services/products.jsx";
 import FormikError from "../../components/form/FormikError";
 import {
   addNewCartService,
   editCartService,
   getSinglrCartService,
-} from "../../services/carts.js";
+} from "../../services/carts.jsx";
 import { Alert } from "../../utils/alerts.js";
 import { numberWithCommas } from "../../utils/numbers.js";
 

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CategoryContext } from "../../../context/categoryContext";
-import ActionIcon from "../../../components/ActionIcon";
+import { CategoryContext } from "../../../context/categoryContext.jsx";
+import ActionIcon from "../../../components/ActionIcon.jsx";
 
 const Actions = ({ rowData, handleDeleteCategory }) => {
   const navigate = useNavigate();

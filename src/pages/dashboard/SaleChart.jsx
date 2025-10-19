@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getThisYearOrdersService } from "../../services/orders.js";
+import { getThisYearOrdersService } from "../../services/orders.jsx";
 import { destroyChart, setDashboardChart } from "../../utils/dashboardChart.js";
 import jMoment from "jalali-moment";
 import { object } from "yup";

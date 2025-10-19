@@ -4,7 +4,7 @@ import SpinnerLoad from "../../components/SpinnerLoad";
 import {
   getFewerProductsService,
   toggleNotificationService,
-} from "../../services/products.js";
+} from "../../services/products.jsx";
 import { Alert } from "../../utils/alerts.js";
 
 const ProductTable = () => {

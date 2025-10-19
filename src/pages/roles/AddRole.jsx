@@ -8,7 +8,7 @@ import { initialValues, onSubmit, validationSchema } from "./core.js";
 import {
   getAllPermissionsService,
   getSinglrUserService,
-} from "../../services/users.js";
+} from "../../services/users.jsx";
 
 const AddRole = () => {
   const { setData } = useOutletContext();

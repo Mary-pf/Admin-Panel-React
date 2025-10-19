@@ -5,7 +5,7 @@ import PrevPageButton from "../../../components/PrevPageButton";
 import {
   deleteCategoryAttrService,
   getCategoryAttrsService,
-} from "../../../services/categoryAttr.js";
+} from "../../../services/categoryAttr.jsx";
 import AttrAction from "./AttrAction";
 import ShowInFilter from "./ShowInFilter";
 import { Alert, Confirm } from "../../../utils/alerts.js";

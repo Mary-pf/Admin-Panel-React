@@ -1,4 +1,4 @@
-import httpService from "./httpService.js";
+import httpService from "./httpService.jsx";
 
 export const getCategoriesService = (id = null) => {
   return httpService(`/admin/categories${id ? `?parent=${id}` : ""}`, "get");
